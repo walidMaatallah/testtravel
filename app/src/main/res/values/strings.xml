@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">travelcartest</string>
+    <string name="tab_text_1">Recherche</string>
+    <string name="tab_text_2">Mon Compte</string>
+</resources>

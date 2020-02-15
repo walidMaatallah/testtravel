@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="@dimen/size_4">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/item_ride"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="1dp"
+        android:background="@android:color/white"
+        android:clickable="true"
+        android:focusable="true"
+        android:padding="@dimen/size_16">
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/ride_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="Marque"
+            android:textSize="@dimen/text_size_12"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            android:drawablePadding="@dimen/size_10"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/ride_hour"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/size_4"
+            android:fontFamily="@font/lato_bold"
+            android:gravity="center"
+            android:padding="@dimen/size_10"
+            android:text="model"
+            android:textStyle="normal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ride_date" />
+
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/ride_duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/size_10"
+            android:padding="@dimen/size_10"
+            android:text="Année"
+            android:textSize="@dimen/text_size_12"
+            android:textStyle="normal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ride_hour"
+            android:drawablePadding="@dimen/size_10"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/ride_distance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:layout_marginTop="@dimen/size_10"
+            android:padding="@dimen/size_10"
+            android:text="picture"
+            android:textSize="@dimen/text_size_12"
+            android:textStyle="normal"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/ride_duration"
+            android:drawablePadding="@dimen/size_10"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</com.google.android.material.card.MaterialCardView>
