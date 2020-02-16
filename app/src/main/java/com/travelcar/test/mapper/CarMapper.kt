@@ -5,7 +5,7 @@ import com.travelcar.test.source.db.tables.CarEntity
 
 object CarMapper {
 
-    fun mapCarEntityToCarDomain(carEntity: CarEntity): Car {
+    private fun mapCarEntityToCarDomain(carEntity: CarEntity): Car {
         return Car(
             carEntity.make,
             carEntity.model,

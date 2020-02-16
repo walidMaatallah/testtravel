@@ -18,8 +18,8 @@ interface CarDao {
     @Update
     suspend fun updateCars(vararg cars: CarEntity)
 
-    @Delete
-    suspend fun deleteCars(vararg cars: CarEntity)
+    @Query("DELETE FROM CarEntity")
+    suspend fun deleteCars()
 
     @Query("SELECT * FROM CarEntity")
     fun loadAllCars(): LiveData<Array<CarEntity>>

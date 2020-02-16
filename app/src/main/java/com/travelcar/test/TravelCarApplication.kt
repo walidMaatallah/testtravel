@@ -1,26 +1,18 @@
 package com.travelcar.test
 
 import android.app.Application
+import com.facebook.stetho.Stetho
 
 class TravelCarApplication : Application() {
-
-
 
     override fun onCreate() {
         super.onCreate()
         appContext = this
+        Stetho.initializeWithDefaults(this)
     }
 
     companion object {
-        fun geInstance(): TravelCarApplication {
-            return TravelCarApplication()
-        }
-
         lateinit var appContext: TravelCarApplication
-
-        fun get(): TravelCarApplication {
-            return appContext
-        }
     }
 
 }

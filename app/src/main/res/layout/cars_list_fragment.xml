@@ -3,10 +3,15 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.main.account.AccountFragment">
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/cars_recycler"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="match_parent"
+        android:padding="@dimen/size_8"
+        android:background="#DDC2C2C2"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
 
 </FrameLayout>
