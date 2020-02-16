@@ -1,13 +1,109 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.main.account.AccountFragment">
 
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="Hello account" />
 
-</FrameLayout>
+    <!--- header -->
+    <View
+        android:id="@+id/account_header_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/colorPrimaryTravelCar"
+        app:layout_constraintBottom_toTopOf="@+id/account_user_information_wrapper"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_weight="1" />
+
+    <!-- Stretch View  -->
+    <View
+        android:id="@+id/account_user_information_wrapper"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/account_header_view"
+        app:layout_constraintVertical_weight="2" />
+
+
+    <!-- user picture -->
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/account_profile_picture"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:adjustViewBounds="true"
+        android:scaleType="centerInside"
+        android:src="@drawable/fake_profile_picture"
+        app:layout_constraintBottom_toBottomOf="@+id/account_header_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/account_header_view" />
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/account_change_profile_picture"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_camera"
+        android:visibility="gone"
+        app:layout_constraintBottom_toBottomOf="@+id/account_profile_picture"
+        app:layout_constraintStart_toEndOf="@+id/account_profile_picture" />
+
+
+    <!-- User name -->
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/account_user_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:background="@null"
+        android:enabled="false"
+        android:gravity="center"
+        android:text="Slim Tonnech"
+        android:textSize="@dimen/text_size_24"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/account_profile_picture" />
+
+    <!-- User email -->
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/account_user_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:background="@null"
+        android:enabled="false"
+        android:gravity="center"
+        android:text="slim.tonnech@gmail.com"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/account_user_name" />
+
+    <!-- User Birthday -->
+    <androidx.appcompat.widget.AppCompatEditText
+        android:id="@+id/account_user_birthday"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:background="@null"
+        android:enabled="false"
+        android:gravity="center"
+        android:text="11 Janv 1989"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/account_user_email" />
+
+    <!-- edit and save profile -->
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/account_button_edit_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/size_16"
+        android:src="@drawable/ic_edit"
+        app:backgroundTint="@color/colorPrimaryTravelCar"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
