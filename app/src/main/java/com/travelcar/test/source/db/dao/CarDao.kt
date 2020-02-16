@@ -1,5 +1,6 @@
 package com.travelcar.test.source.db.dao
 
+import androidx.lifecycle.LiveData
 import androidx.room.*
 import com.travelcar.test.source.db.tables.CarEntity
 
@@ -10,6 +11,10 @@ interface CarDao {
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertCars(vararg cars: CarEntity)
 
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertCars( cars: List<CarEntity>)
+
     @Update
     suspend fun updateCars(vararg cars: CarEntity)
 
@@ -17,16 +22,6 @@ interface CarDao {
     suspend fun deleteCars(vararg cars: CarEntity)
 
     @Query("SELECT * FROM CarEntity")
-    suspend fun loadAllCars(): Array<CarEntity>
-
-    @Query("SELECT * FROM CarEntity WHERE id = :id")
-    suspend fun selectCar(id: Int) : CarEntity
-
-
-    @Query("DELETE FROM CarEntity")
-    abstract fun deleteCar(car: CarEntity)
-
-    @Insert
-    abstract suspend fun insertCar(car: CarEntity)
+    fun loadAllCars(): LiveData<Array<CarEntity>>
 
 }

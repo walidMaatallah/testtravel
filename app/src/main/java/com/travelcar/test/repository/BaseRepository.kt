@@ -15,7 +15,6 @@ open class BaseRepository {
             is Output.Error -> Log.e("Error", "The $error and the ${result.exception}")
         }
         return output
-
     }
     private suspend fun<T : Any> newsApiOutput(call: suspend()-> Response<T> , error: String) : Output<T>{
         val response = call.invoke()

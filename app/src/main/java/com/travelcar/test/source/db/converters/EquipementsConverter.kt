@@ -7,12 +7,14 @@ class EquipementsConverter {
 
     @TypeConverter
     fun stringToListCars(value: String?): List<String>? {
-        val objects = Gson().fromJson(value, Array<String>::class.java) as Array<String>
-        return objects.toList()
+        return value?.let {
+            val objects = Gson().fromJson(it, Array<String>::class.java)
+            objects.toList()
+        }
     }
 
     @TypeConverter
-    fun listCarsToString(equipements :  List<String>?): String? {
-        return Gson().toJson(equipements)
+    fun listCarsToString(equipements: List<String>?): String? {
+        return equipements?.let { Gson().toJson(it) }
     }
 }

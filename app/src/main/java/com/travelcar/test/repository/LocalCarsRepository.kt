@@ -9,7 +9,7 @@ class LocalCarsRepository(private val dao: CarDao) :
     BaseRepository() {
 
     //get latest news using safe api call
-    suspend fun getLocalCars(): Array<CarEntity>? {
+   /* suspend fun getLocalCars(): Array<CarEntity>? {
         return dao.loadAllCars()
-    }
+    }*/
 }

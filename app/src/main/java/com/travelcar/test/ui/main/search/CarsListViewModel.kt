@@ -3,6 +3,8 @@ package com.travelcar.test.ui.main.search
 import android.app.Application
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
+import androidx.lifecycle.viewModelScope
+import com.travelcar.test.TravelCarApplication
 import com.travelcar.test.model.Car
 import com.travelcar.test.repository.LocalCarsRepository
 import com.travelcar.test.repository.RemoteCarsRepository
@@ -21,25 +23,16 @@ class CarsListViewModel : ViewModel() {
     private val scope = CoroutineScope(coroutineContext)
     //initialize car repo
     private val remoteCarsRepository: RemoteCarsRepository =
-        RemoteCarsRepository(WsConfig.createService())
+        RemoteCarsRepository(WsConfig.createService(), DbConfig.getInstance(TravelCarApplication.appContext).carDao())
     //initialize car local repo
-    private val localCarsRepository: LocalCarsRepository =
-        LocalCarsRepository(DbConfig.getInstance(Application()).carDao())
+//    private val localCarsRepository: LocalCarsRepository =
+//        LocalCarsRepository(DbConfig.getInstance(Application()).carDao())
     //live data that will be populated as cars list
     val carsLiveData = MutableLiveData<MutableList<Car>>()
 
 
 
-    fun getLatestNews() {
-        ///launch the coroutine scope
-        scope.launch {
-            //get  cars from car repo
-            val carsList = remoteCarsRepository.getRemoteCars()
-            //post the value inside live data
-            carsLiveData.postValue(carsList)
-        }
-    }
-
+    fun getLatestNews() = remoteCarsRepository.getCar()
 
 
     fun cancelRequests() = coroutineContext.cancel()

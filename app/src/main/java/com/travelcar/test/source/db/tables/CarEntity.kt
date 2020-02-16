@@ -8,12 +8,12 @@ import com.travelcar.test.source.db.converters.EquipementsConverter
 @Entity
 data class CarEntity(
 
-    @PrimaryKey
-    var id: Int,
+    @PrimaryKey(autoGenerate = true)
+    var id: Int = 0,
     var make: String,
     var model: String,
     var year: Int,
     var picture: String,
     @TypeConverters(EquipementsConverter::class)
-    var equipement: List<String>
+    var equipement: List<String>?
 )

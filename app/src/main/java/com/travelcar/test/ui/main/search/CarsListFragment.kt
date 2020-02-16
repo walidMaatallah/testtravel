@@ -27,8 +27,7 @@ class CarsListFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         viewModel = ViewModelProvider(this).get(CarsListViewModel::class.java)
-       viewModel.getLatestNews()
-        viewModel.carsLiveData.observe(viewLifecycleOwner, Observer<MutableList<Car>> {
+        viewModel.getLatestNews().observe(viewLifecycleOwner, Observer<List<Car>> {
             Toast.makeText(activity, "zise = ${it.size}" , Toast.LENGTH_SHORT).show()
         })
     }
