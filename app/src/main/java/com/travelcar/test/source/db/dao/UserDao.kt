@@ -19,20 +19,6 @@ interface UserDao {
     @Query("SELECT * FROM UserEntity")
     suspend fun loadAllUsers(): Array<UserEntity>
 
-    @Transaction
-    open suspend fun setLoggedInUser(loggedInUser: UserEntity) {
-        deleteUser(loggedInUser)
-        insertUser(loggedInUser)
-    }
-
-
-    @Query("SELECT * FROM UserEntity WHERE id = :id")
-    suspend fun selectUser(id: Int) : UserEntity
-
-
-    @Query("DELETE FROM UserEntity")
-    abstract fun deleteUser(user: UserEntity)
-
     @Insert
     abstract suspend fun insertUser(user: UserEntity)
 

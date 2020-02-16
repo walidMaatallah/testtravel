@@ -55,6 +55,13 @@ dependencies {
     api "com.squareup.retrofit2:converter-gson:$retrofitVersion"
     api "com.squareup.okhttp3:okhttp:$okHttpVersion"
 
+    //Blury : https://github.com/wasabeef/Blurry/releases
+    implementation "jp.wasabeef:blurry:$blurEffectVersion"
+
+    //Circle ImageView
+    implementation "de.hdodenhof:circleimageview:$circleImageViewVersion"
+
+
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'

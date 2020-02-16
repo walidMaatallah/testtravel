@@ -19,12 +19,6 @@ interface CarDao {
     @Query("SELECT * FROM CarEntity")
     suspend fun loadAllCars(): Array<CarEntity>
 
-    @Query("SELECT * FROM CarEntity WHERE id = :id")
-    suspend fun selectCar(id: Int) : CarEntity
-
-
-    @Query("DELETE FROM CarEntity")
-    abstract fun deleteCar(car: CarEntity)
 
     @Insert
     abstract suspend fun insertCar(car: CarEntity)

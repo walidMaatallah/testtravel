@@ -3,6 +3,7 @@ package com.travelcar.test.source.db
 import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
+import com.travelcar.test.source.db.converters.EquipementsConverter
 import com.travelcar.test.source.db.converters.TimeStampConverter
 import com.travelcar.test.source.db.dao.CarDao
 import com.travelcar.test.source.db.dao.UserDao
@@ -13,7 +14,7 @@ import com.travelcar.test.source.db.tables.UserEntity
     entities = [UserEntity::class, CarEntity::class],
     version = TravelCarDatabase.VERSION, exportSchema = true
 )
-@TypeConverters(TimeStampConverter::class)
+@TypeConverters(TimeStampConverter::class, EquipementsConverter::class)
 abstract class TravelCarDatabase : RoomDatabase() {
 
     abstract fun carDao(): CarDao
