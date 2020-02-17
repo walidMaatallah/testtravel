@@ -2,6 +2,6 @@
 <resources>
     <color name="colorPrimary"> #1B134F</color>
     <color name="colorPrimaryDark">#134CD9</color>
-    <color name="colorAccent">#8D2639</color>
+    <color name="colorAccent">#1B134F</color>
     <color name="colorPrimaryTravelCar">#2F2A54</color>
 </resources>
