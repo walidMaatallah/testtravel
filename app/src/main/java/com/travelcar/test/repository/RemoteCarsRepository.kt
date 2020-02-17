@@ -32,8 +32,7 @@ class RemoteCarsRepository(
             )
         } catch (exception: IOException) {
             emitSource(
-                carDao.loadAllCars().map { listOf<Car>() }
-            )
+                carDao.loadAllCars().map { list -> CarMapper.mapCarEntityToCarDomain(list.toList()) })
         }
     }
 }

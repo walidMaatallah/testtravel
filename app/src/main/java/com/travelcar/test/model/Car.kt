@@ -5,5 +5,5 @@ data class Car(
     var model: String,
     var year: Int,
     var picture: String,
-    var equipement: List<String>?
+    var equipments: List<String>?
 )

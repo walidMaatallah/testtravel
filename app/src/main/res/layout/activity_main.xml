@@ -26,23 +26,35 @@
                 android:id="@+id/anim_toolbar"
                 android:layout_width="match_parent"
                 android:layout_height="104dp"
-                android:minHeight="?attr/actionBarSize"
                 android:gravity="top"
+                android:minHeight="?attr/actionBarSize"
                 app:layout_collapseMode="pin"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
-                app:titleMarginTop="13dp" >
+                app:titleMarginTop="13dp">
 
-                <TextView
-                    android:id="@+id/yt"
-                    android:layout_width="wrap_content"
+
+                <androidx.appcompat.widget.SearchView
+                    android:id="@+id/search"
                     android:layout_height="wrap_content"
-                    android:gravity="center"
-                    android:minHeight="?actionBarSize"
-                    android:padding="@dimen/appbar_padding"
-                    android:text="TravelCar"
-                    android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title" />
+                    android:layout_width="match_parent"
+                    android:nextFocusUp="@id/search"
+                    android:nextFocusLeft="@id/search" />
 
             </com.google.android.material.appbar.MaterialToolbar>
+
+            <TextView
+                android:id="@+id/yt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/lato_italic"
+                android:gravity="center"
+                android:layout_gravity="center"
+                android:minHeight="?actionBarSize"
+                android:textSize="@dimen/size_24"
+                android:padding="@dimen/appbar_padding"
+                android:text="TravelCar"
+                android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title" />
+
 
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tabs"
@@ -50,7 +62,9 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="bottom"
                 app:tabGravity="fill"
-                app:tabMode="fixed"/>
+                app:tabMode="fixed"
+                app:tabTextAppearance="@style/tab_text" />
+
         </com.google.android.material.appbar.CollapsingToolbarLayout>
 
     </com.google.android.material.appbar.AppBarLayout>
@@ -61,11 +75,11 @@
         android:layout_height="match_parent"
         app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
+    <!--<com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="bottom|end"
         android:layout_margin="@dimen/fab_margin"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
+        app:srcCompat="@android:drawable/ic_menu_search" />-->
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
