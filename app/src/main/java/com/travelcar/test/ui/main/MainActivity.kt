@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.viewpager.widget.ViewPager
 import com.travelcar.test.R
-import com.travelcar.test.ui.main.search.FragmentCallback
+import com.travelcar.test.ui.main.car.FragmentCallback
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {

@@ -6,7 +6,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import com.travelcar.test.R
 import com.travelcar.test.ui.main.account.AccountFragment
-import com.travelcar.test.ui.main.search.CarsListFragment
+import com.travelcar.test.ui.main.car.CarsListFragment
 
 private val TAB_TITLES = arrayOf(
     R.string.tab_text_1,

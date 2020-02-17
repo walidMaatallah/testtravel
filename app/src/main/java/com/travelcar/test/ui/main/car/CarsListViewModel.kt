@@ -1,4 +1,4 @@
-package com.travelcar.test.ui.main.search
+package com.travelcar.test.ui.main.car
 
 import androidx.lifecycle.ViewModel
 import com.travelcar.test.TravelCarApplication

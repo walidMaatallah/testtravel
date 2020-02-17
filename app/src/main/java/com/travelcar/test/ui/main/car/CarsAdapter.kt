@@ -1,4 +1,4 @@
-package com.travelcar.test.ui.main.search
+package com.travelcar.test.ui.main.car
 
 import android.content.Context
 import android.graphics.Typeface
@@ -8,9 +8,9 @@ import android.text.style.StyleSpan
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
 import android.widget.TextView
 import androidx.annotation.NonNull
+import androidx.appcompat.widget.AppCompatImageView
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.travelcar.test.R
@@ -34,8 +34,6 @@ class CarsAdapter(
     override fun onBindViewHolder(@NonNull holder: CarViewHolder, position: Int) {
         val car = carsList[position]
         holder.displayData(car)
-
-
     }
 
     fun setData(newData: List<Car>, filter: String) {
@@ -53,7 +51,7 @@ class CarsAdapter(
 
         private val carMake: TextView = itemView.car_make
         private val carYear: TextView = itemView.car_year
-        private val image: ImageView = itemView.image
+        private val image: AppCompatImageView = itemView.image
         private val equipmentView: TextView = itemView.equipement
 
 
@@ -70,6 +68,10 @@ class CarsAdapter(
             equipmentView.text = equipment
 
             Glide.with(context).load(car.picture).into(image)
+
+            itemView.item_car.setOnClickListener {
+                carListClickEventListener.onCarItemClick(car, image)
+            }
 
         }
 

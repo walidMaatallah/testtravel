@@ -1,10 +1,13 @@
-package com.travelcar.test.ui.main.search
+package com.travelcar.test.ui.main.car
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.appcompat.widget.AppCompatImageView
+import androidx.core.app.ActivityOptionsCompat
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -12,6 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.travelcar.test.R
 import com.travelcar.test.model.Car
 import com.travelcar.test.ui.main.MainActivity
+import com.travelcar.test.ui.main.car.details.CarDetailsActivity
 import kotlinx.android.synthetic.main.cars_list_fragment.*
 
 
@@ -36,9 +40,8 @@ class CarsListFragment : Fragment(), CarListClickEventListener, FragmentCallback
     }
 
 
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(this).get(CarsListViewModel::class.java)
         carsAdapter = CarsAdapter(context!!, this)
         cars_recycler.layoutManager = LinearLayoutManager(activity)
@@ -50,13 +53,20 @@ class CarsListFragment : Fragment(), CarListClickEventListener, FragmentCallback
         })
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-    }
 
+    override fun onCarItemClick(car: Car, sharedElementView: AppCompatImageView) {
+        Intent(activity, CarDetailsActivity::class.java).apply {
+            activity?.let { activity ->
+                putExtra(CarDetailsActivity.EXTRA_CAR, car)
+                val options = ActivityOptionsCompat.makeSceneTransitionAnimation(
+                    activity,
+                    sharedElementView,
+                    getString(R.string.shared_element_car_key)
+                )
+                startActivity(this, options.toBundle())
+            }
+        }
 
-    override fun onCarItemClick(car: Car) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
 
 
