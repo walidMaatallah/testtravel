@@ -8,9 +8,6 @@ import com.travelcar.test.source.db.tables.UserEntity
 @Dao
 interface UserDao {
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertUsers(vararg users: UserEntity)
-
     @Query("SELECT * FROM UserEntity WHERE id =:id")
     fun loadUser(id: Int): LiveData<UserEntity>
 
@@ -20,7 +17,7 @@ interface UserDao {
     @Delete
     suspend fun deleteUsers(vararg users: UserEntity)
 
-    @Insert
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
     suspend fun insertUser(user: UserEntity)
 
 }
