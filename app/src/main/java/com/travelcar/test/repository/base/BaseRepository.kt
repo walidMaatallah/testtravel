@@ -1,4 +1,4 @@
-package com.travelcar.test.repository
+package com.travelcar.test.repository.base
 
 import android.util.Log
 import retrofit2.Response
@@ -16,7 +16,7 @@ open class BaseRepository {
         }
         return output
     }
-    private suspend fun<T : Any> newsApiOutput(call: suspend()-> Response<T> , error: String) : Output<T>{
+    private suspend fun<T : Any> newsApiOutput(call: suspend()-> Response<T> , error: String) : Output<T> {
         val response = call.invoke()
         return if (response.isSuccessful)
             Output.Success(response.body()!!)

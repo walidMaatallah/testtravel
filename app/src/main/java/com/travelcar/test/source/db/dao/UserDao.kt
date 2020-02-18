@@ -9,7 +9,7 @@ import com.travelcar.test.source.db.tables.UserEntity
 interface UserDao {
 
     @Query("SELECT * FROM UserEntity WHERE id =:id")
-    fun loadUser(id: Int): LiveData<UserEntity>
+    fun loadUserById(id: Int): LiveData<UserEntity>
 
     @Update
     suspend fun updateUsers(vararg users: UserEntity)

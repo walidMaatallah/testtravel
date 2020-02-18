@@ -25,7 +25,13 @@ object CarMapper {
 
 
     private fun mapCarDomainToCarEntity(car: Car): CarEntity {
-        return CarEntity(make =  car.make, model = car.model, year = car.year, picture = car.picture, equipement = car.equipments)
+        return CarEntity(
+            make = car.make,
+            model = car.model,
+            year = car.year,
+            picture = car.picture,
+            equipement = car.equipments
+        )
     }
 
     fun mapCarDomainToCarEntity(cars: List<Car>): List<CarEntity> {

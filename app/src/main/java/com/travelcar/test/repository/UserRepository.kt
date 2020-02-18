@@ -15,7 +15,7 @@ class UserRepository(private val userDao: UserDao) {
     }
 
     fun loadUser(): LiveData<User?> = liveData {
-        val data = userDao.loadUser(USER_ID)
+        val data = userDao.loadUserById(USER_ID)
             .map { userEntity -> UserMapper.mapUserEntityToUserDomain(userEntity) }
         emitSource(data)
     }

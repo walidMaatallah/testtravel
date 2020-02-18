@@ -13,7 +13,7 @@ object UserMapper {
             firstName = userEntity.firstName,
             lastName = userEntity.lastName,
             birthDate = userEntity.birthDay ?: Date(),
-            adress = userEntity.address
+            address = userEntity.address
         )
     }
 
@@ -23,7 +23,7 @@ object UserMapper {
             firstName = user.firstName,
             lastName = user.lastName,
             birthDay = user.birthDate,
-            address = user.adress
+            address = user.address
         )
     }
 }

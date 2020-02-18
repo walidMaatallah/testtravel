@@ -1,8 +1,7 @@
-package com.travelcar.test.source.network
+package com.travelcar.test.source.db
 
 import android.app.Application
 import androidx.room.Room
-import com.travelcar.test.source.db.TravelCarDatabase
 
 class DbConfig {
 

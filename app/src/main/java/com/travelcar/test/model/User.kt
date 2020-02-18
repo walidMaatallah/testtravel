@@ -7,5 +7,5 @@ data class User(
     var firstName: String,
     var lastName: String,
     var birthDate: Date,
-    var adress: String
+    var address: String
 )

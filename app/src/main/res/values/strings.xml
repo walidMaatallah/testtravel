@@ -5,4 +5,16 @@
     <string name="year">Année : %s</string>
     <string name="all_fields_required">Tous les champs sont obligatoires</string>
     <string name="success_update_profile">Mise à jour avec succès</string>
+    <string name="edit_profil">Modifier le profil</string>
+    <string name="select_action">Sélectionnez Action s\'il vous plaît</string>
+    <string name="select_gallery">Sélectionnez une photo de la galerie</string>
+    <string name="select_camera">Prendre une photo depuis un appareil photo</string>
+    <string name="save_btn">Enregistrer</string>
+    <string name="search">Search</string>
+    <string name="last_name">Nom :</string>
+    <string name="first_name">Prénom :</string>
+    <string name="email">Email :</string>
+    <string name="birth_date">Date de naissance :</string>
+    <string name="marque">Marque</string>
+    <string name="travelcar">TravelCar</string>
 </resources>
