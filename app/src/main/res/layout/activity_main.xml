@@ -19,8 +19,7 @@
             android:layout_height="256dp"
             android:fitsSystemWindows="true"
             app:contentScrim="?attr/colorPrimary"
-            app:layout_scrollFlags="scroll|exitUntilCollapsed"
-            app:titleEnabled="false">
+            app:layout_scrollFlags="scroll|exitUntilCollapsed">
 
             <com.google.android.material.appbar.MaterialToolbar
                 android:id="@+id/anim_toolbar"
@@ -29,16 +28,16 @@
                 android:gravity="top"
                 android:minHeight="?attr/actionBarSize"
                 app:layout_collapseMode="pin"
+                app:layout_scrollFlags="scroll|enterAlways"
                 app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
                 app:titleMarginTop="13dp">
 
-
                 <androidx.appcompat.widget.SearchView
                     android:id="@+id/search"
-                    android:layout_height="wrap_content"
                     android:layout_width="match_parent"
-                    android:nextFocusUp="@id/search"
-                    android:nextFocusLeft="@id/search" />
+                    android:layout_height="wrap_content"
+                    android:nextFocusLeft="@id/search"
+                    android:nextFocusUp="@id/search" />
 
             </com.google.android.material.appbar.MaterialToolbar>
 
@@ -46,15 +45,14 @@
                 android:id="@+id/yt"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_gravity="center"
                 android:fontFamily="@font/lato_italic"
                 android:gravity="center"
-                android:layout_gravity="center"
                 android:minHeight="?actionBarSize"
-                android:textSize="@dimen/size_24"
                 android:padding="@dimen/appbar_padding"
-                android:text="TravelCar"
-                android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title" />
-
+                android:text="@string/travelcar"
+                android:textAppearance="@style/TextAppearance.Widget.AppCompat.Toolbar.Title"
+                android:textSize="@dimen/text_size_24" />
 
             <com.google.android.material.tabs.TabLayout
                 android:id="@+id/tabs"

@@ -1,4 +1,4 @@
-package com.travelcar.test.ui.main.car
+package com.travelcar.test.ui.main.car.list
 
 import android.content.Intent
 import android.os.Bundle
@@ -19,13 +19,15 @@ import com.travelcar.test.ui.main.car.details.CarDetailsActivity
 import kotlinx.android.synthetic.main.cars_list_fragment.*
 
 
-class CarsListFragment : Fragment(), CarListClickEventListener, FragmentCallback {
+class CarsListFragment : Fragment(),
+    CarListClickEventListener,
+    CarsListFragmentCallback {
 
 
     private lateinit var viewModel: CarsListViewModel
     private lateinit var carsAdapter: CarsAdapter
-    private lateinit var list : List<Car>
-    private  var filter= ""
+    private lateinit var list: List<Car>
+    private var filter = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,7 +45,8 @@ class CarsListFragment : Fragment(), CarListClickEventListener, FragmentCallback
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         viewModel = ViewModelProvider(this).get(CarsListViewModel::class.java)
-        carsAdapter = CarsAdapter(context!!, this)
+        carsAdapter =
+            CarsAdapter(context!!, this)
         cars_recycler.layoutManager = LinearLayoutManager(activity)
         cars_recycler.adapter = carsAdapter
         viewModel.getLatestNews().observe(viewLifecycleOwner, Observer<List<Car>> { listCars ->
@@ -70,12 +73,12 @@ class CarsListFragment : Fragment(), CarListClickEventListener, FragmentCallback
     }
 
 
-
     companion object {
-        fun newInstance() = CarsListFragment()
+        fun newInstance() =
+            CarsListFragment()
     }
 
-    override fun onFilter(text : String) {
+    override fun onFilter(text: String) {
         carsAdapter.setData(list.filter { car -> car.make.contains(text, true) }, text)
 
     }

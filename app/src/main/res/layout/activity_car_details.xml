@@ -7,13 +7,12 @@
     android:background="@color/colorPrimary"
     tools:context=".ui.main.car.details.CarDetailsActivity">
 
-
     <androidx.appcompat.widget.AppCompatImageView
         android:id="@+id/car_details_image_view_car"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:adjustViewBounds="true"
-        android:scaleType="centerInside"
+        android:scaleType="fitCenter"
         android:transitionName="@string/shared_element_car_key"
         app:layout_constraintBottom_toTopOf="@+id/car_details_information_container"
         app:layout_constraintStart_toStartOf="parent"
@@ -50,7 +49,7 @@
             android:layout_height="wrap_content"
             android:fontFamily="@font/lato"
             android:gravity="start"
-            android:text="Marque"
+            android:text="@string/marque"
             android:textColor="@color/colorPrimary"
             android:textSize="@dimen/text_size_18"
             app:layout_constraintStart_toStartOf="parent"
@@ -63,7 +62,7 @@
             android:fontFamily="@font/lato"
             android:gravity="start"
             android:paddingTop="@dimen/size_4"
-            android:text="Année"
+            tools:text="Année"
             android:textSize="@dimen/text_size_16"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/car_make" />
@@ -75,13 +74,12 @@
             android:layout_marginTop="@dimen/size_8"
             android:fontFamily="@font/lato"
             android:gravity="start"
-            android:text="Equipement"
+            tools:text="Equipement"
             android:textColor="#3A9245"
             android:textSize="@dimen/text_size_16"
             android:textStyle="normal"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@id/car_year" />
-
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

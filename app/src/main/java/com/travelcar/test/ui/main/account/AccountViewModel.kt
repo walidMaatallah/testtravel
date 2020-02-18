@@ -6,7 +6,7 @@ import androidx.lifecycle.viewModelScope
 import com.travelcar.test.TravelCarApplication
 import com.travelcar.test.model.User
 import com.travelcar.test.repository.UserRepository
-import com.travelcar.test.source.network.DbConfig
+import com.travelcar.test.source.db.DbConfig
 import kotlinx.coroutines.launch
 
 class AccountViewModel : ViewModel() {

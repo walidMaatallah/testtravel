@@ -14,5 +14,4 @@ class TravelCarApplication : Application() {
     companion object {
         lateinit var appContext: TravelCarApplication
     }
-
 }

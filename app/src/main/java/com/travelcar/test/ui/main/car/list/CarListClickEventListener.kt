@@ -1,4 +1,4 @@
-package com.travelcar.test.ui.main.car
+package com.travelcar.test.ui.main.car.list
 
 import androidx.appcompat.widget.AppCompatImageView
 import com.travelcar.test.model.Car

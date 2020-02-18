@@ -1,4 +1,4 @@
-package com.travelcar.test.repository
+package com.travelcar.test.repository.base
 
 sealed class Output<out T : Any>{
     data class Success<out T : Any>(val output : T) : Output<T>()

@@ -9,10 +9,6 @@ import kotlinx.android.synthetic.main.activity_car_details.*
 
 class CarDetailsActivity : AppCompatActivity() {
 
-    companion object {
-        const val EXTRA_CAR = "extra_car"
-    }
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_car_details)
@@ -37,4 +33,9 @@ class CarDetailsActivity : AppCompatActivity() {
         }
         equipement.text = equipment
     }
+
+    companion object {
+        const val EXTRA_CAR = "extra_car"
+    }
+
 }
